@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Formulário</title>
+    <meta charset="utf-8">
+    <link href="estilo.css" rel="stylesheet">
+    <title>Formulário</title>
+</head>
+
+  <body>
+    <header>
+      <h1>Cadastro de Clientes</h1>
+    </header>
+    
+    <section>
+      <div>
+          <form name="formulario" action="#" method="post"" id="formulario">
+            <label for="fnome"><b>Nome:</b></label>
+        <input type="text" placeholder="Digite seu nome." name="fnome" id="fnome" maxlength="100" >
+        <br/>
+        <label for="femail"><b>Email:</b></label>
+        <input type="email" placeholder="exemplo123@gmail.com" name="femail" id="femail" >
+        <br/>
+        <label for="ftel"><b>Telefone:</b></label>
+        <input type="tel" placeholder="(00)123456789" name="ftel" id="ftel" maxlength="11" >
+        <label for="fbairro"><b>Bairro:</b></label>
+        <input type="text" placeholder="Digite seu endereço." name="fbairro" id="fbairro" maxlength="50">
+        <label for="fnumero"><b>Número:</b></label>
+        <input type="number" placeholder="Nº 0" name="fnumero" id="fnumero">
+        </br>
+        <label for="fcidade"><b>Cidade:</b></label></label>
+        <input type="text" placeholder="Digite sua cidade." name="fcidade" id="fcidade" >
+        <label name="festado" id="festado"><b>Estado:</b></label>
+        <select id="flista">
+            <option value = "" >Selecione seu estado</option>
+            <option value="AC">AC</option>
+            <option value="AL">AL</option>
+            <option value="AP">AP</option>
+            <option value="AM">AM</option>
+            <option value="BA">BA</option>
+            <option value="CE">CE</option>
+            <option value="DF">DF</option>
+            <option value="ES">ES</option>
+            <option value="GO">GO</option>
+            <option value="MA">MA</option>
+            <option value="MT">MT</option>
+            <option value="MS">MS</option>
+            <option value="MG">MG</option>
+            <option value="PA">PA</option>
+            <option value="PB">PB</option>
+            <option value="PR">PR</option>
+            <option value="PE">PE</option>
+            <option value="PI">PI</option>
+            <option value="RJ">RJ</option>
+            <option value="RN">RN</option>
+            <option value="RS">RS</option>
+            <option value="RO">RO</option>
+            <option value="RR">RR</option>
+            <option value="SC">SC</option>
+            <option value="SP">SP</option>
+            <option value="SE">SE</option>
+            <option value="TO">TO</option>
+          </select>
+        <br/>
+        <label for="fcep"><b>CEP:</b></label>
+        <input type="tel" placeholder="Digite seu CEP." name="fcep" id="fcep" maxlength="8" >
+        <br/>
+        <label for="flogradouro">Logradouro:</label>
+        <input type="text" placeholder="Digite seu logradouro." name="flogradouro" id="flogradouro">
+        <br/>
+        <br/>
+        <input type="reset" value="Apagar tudo">
+        <input type="submit" name="Finalizar" value="Finalizar" onclick="finalizar()">
+          </form>
+        </div>  
+    </section>
+
+	<footer>
+		<p>&copy; Caio Soares 31/05/2020</p>
+	</footer>
+
+    <script>
+        function finalizar(){
+            var fnome = formulario.fnome;
+            if(fnome.value == ""){
+            alert("Nome não informado.")
+            fnome.focus();}
+
+            var femail = formulario.femail;
+            if(femail.value == ""){
+            alert("Email não informado.")
+            femail.focus();}
+
+            var ftel = formulario.ftel;
+            if(ftel.value == ""){
+            alert("Telefone não informado.")
+            ftel.focus();}
+
+            var fbairro = formulario.fbairro;
+            if(fbairro.value == ""){
+            alert("Bairro não informado.")
+            fbairro.focus();}
+
+            var fnumero = formulario.fnumero;
+            if(fnumero.value == "" || fnumero.value < 0){
+            alert("Número não informado.")
+            fnumero.focus();}
+
+            var fcidade = formulario.fcidade;
+            if(fcidade.value == ""){
+            alert("Cidade não informado.")
+            fcidade.focus();}
+
+            var fcep = formulario.fcep;
+            if(fcep.value == ""){
+            alert("CEP não informado.")
+            fcep.focus();}
+
+            var flista = document.getElementById("flista");
+            if(flista.value == ""){
+            alert("Escolha seu estado.")
+            flista.focus();}
+
+        }
+        </script>
+
+  </body>
+</html>
+
+//CSS ARQUIVO
+body{
+    background-color: gray;
+    font: normal 15pt Arial;
+}
+header{
+    color: white;
+    text-align:center;
+}
+section{
+    background:white;
+    border-radius:10px;
+    padding:15px;
+    width:400px;
+    margin:auto;
+    box-shadow:3px 3px 10px black;
+}
+label{
+    display: block;
+}
+h1{
+    font-size: 30px;
+}
+input#fnumero{
+    width:50px;
+}
+input[type=reset]:hover{
+    background:red;}
+    input[type=submit]:hover{
+        background: rgb(79, 248, 0);
+}
+footer{
+    color:white;
+    text-align:center;
+    font-style:italic;
+}
